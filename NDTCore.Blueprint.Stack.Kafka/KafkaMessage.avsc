@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "namespace": "NDTCore.Blueprint.Stack.Kafka",
+  "name": "KafkaMessage",
+  "displayName": "Kafka Message",
+  "fields": [
+    {
+      "name": "Id",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "DataContent",
+      "type": [ "null", "string" ],
+      "default": null
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+﻿avrogen -s KafkaMessage.avsc . --skip-directories
