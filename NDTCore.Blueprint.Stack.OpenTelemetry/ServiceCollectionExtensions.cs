@@ -11,55 +11,45 @@ namespace NDTCore.Blueprint.Stack.OpenTelemetry
 {
     public static class ServiceCollectionExtensions
     {
-        const string OTEL_EXPORTER_OTLP_ENDPOINT = "http://localhost:4318";
-        const string OTEL_EXPORTER_OTLP_TRACES = "true";
-        const string OTEL_EXPORTER_OTLP_METRICS = "true";
-        const string OTEL_EXPORTER_OTLP_LOGS = "true";
-
-        static readonly string SERVICE_NAME = Assembly.GetEntryAssembly()?.GetName().Name ?? "NDTCore.Blueprint";
-        static readonly string SERVICE_VERSION = Assembly.GetEntryAssembly()?.GetName().Version?.ToString() ?? "1.0.0.0";
 
         public static IServiceCollection AddStackOpentelemetry(this IServiceCollection services, IConfiguration configuration)
         {
+            var resource = ResourceBuilder
+                            .CreateDefault()
+                            .AddService(OtelConstants.SERVICE_NAME, OtelConstants.SERVICE_NAME, OtelConstants.SERVICE_VERSION);
 
             services.AddLogging(logging => logging
                     .AddOpenTelemetry(options => options
-                        .SetResourceBuilder(
-                            ResourceBuilder
-                            .CreateDefault()
-                            .AddService(serviceName: SERVICE_NAME, serviceVersion: SERVICE_VERSION))
+                        .SetResourceBuilder(resource)
                         .AddConsoleExporter()
                         .AddOtlpExporter()
                     )
             );
 
             services.AddOpenTelemetry()
-                    .ConfigureResource(configure => configure
-                        .AddService(serviceName: SERVICE_NAME))
                     .WithTracing(tracerBuilder => tracerBuilder
-                        .AddSource("InsightSource")
+                        .SetResourceBuilder(resource)
                         .AddAspNetCoreInstrumentation()
                         .AddHttpClientInstrumentation()
                         .AddSqlClientInstrumentation()
                         .AddConsoleExporter()
                         .AddOtlpExporter(options =>
                         {
-                            options.Endpoint = new Uri(OTEL_EXPORTER_OTLP_ENDPOINT);
+                            options.Endpoint = new Uri(OtelConstants.OTEL_EXPORTER_OTLP_ENDPOINT);
                             options.Protocol = OtlpExportProtocol.HttpProtobuf;
                         })
                     );
 
             services.AddOpenTelemetry()
-                    .ConfigureResource(configure => configure
-                        .AddService(serviceName: SERVICE_NAME))
                     .WithMetrics(metricBuilder => metricBuilder
+                        .SetResourceBuilder(resource)
                         .AddAspNetCoreInstrumentation()
                         .AddHttpClientInstrumentation()
                         .AddRuntimeInstrumentation()
                         .AddConsoleExporter()
                         .AddOtlpExporter(options =>
                         {
-                            options.Endpoint = new Uri(OTEL_EXPORTER_OTLP_ENDPOINT);
+                            options.Endpoint = new Uri(OtelConstants.OTEL_EXPORTER_OTLP_ENDPOINT);
                             options.Protocol = OtlpExportProtocol.HttpProtobuf;
                         })
                     );
