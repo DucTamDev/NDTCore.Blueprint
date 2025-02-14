@@ -16,7 +16,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NDTCore.Blueprint.Stack.AzureServiceBus\NDTCore.Blueprint.Stack.AzureServiceBus.csproj" />
+    <ProjectReference Include="..\NDTCore.Blueprint.Stack.ElasticSearch\NDTCore.Blueprint.Stack.ElasticSearch.csproj" />
+    <ProjectReference Include="..\NDTCore.Blueprint.Stack.GrpcService\NDTCore.Blueprint.Stack.GrpcService.csproj" />
     <ProjectReference Include="..\NDTCore.Blueprint.Stack.Kafka\NDTCore.Blueprint.Stack.Kafka.csproj" />
+    <ProjectReference Include="..\NDTCore.Blueprint.Stack.Logging\NDTCore.Blueprint.Stack.Logging.csproj" />
+    <ProjectReference Include="..\NDTCore.Blueprint.Stack.OpenTelemetry\NDTCore.Blueprint.Stack.OpenTelemetry.csproj" />
+    <ProjectReference Include="..\NDTCore.Blueprint.Stack.Quartz\NDTCore.Blueprint.Stack.Quartz.csproj" />
+    <ProjectReference Include="..\NDTCore.Blueprint.Stack.RabbitMq\NDTCore.Blueprint.Stack.RabbitMq.csproj" />
+    <ProjectReference Include="..\NDTCore.Blueprint.Stack.Redis\NDTCore.Blueprint.Stack.Redis.csproj" />
+    <ProjectReference Include="..\NDTCore.Blueprint.Stack.Swagger\NDTCore.Blueprint.Stack.Swagger.csproj" />
   </ItemGroup>
 
 </Project>

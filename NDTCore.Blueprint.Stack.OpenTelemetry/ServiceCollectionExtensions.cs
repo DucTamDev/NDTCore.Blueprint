@@ -12,7 +12,7 @@ namespace NDTCore.Blueprint.Stack.OpenTelemetry
     public static class ServiceCollectionExtensions
     {
 
-        public static IServiceCollection AddStackOpentelemetry(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddStackOpenTelemetry(this IServiceCollection services, IConfiguration configuration)
         {
             var resource = ResourceBuilder
                             .CreateDefault()
