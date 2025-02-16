@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NDTCore.Blueprint.Stack.Grp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NDTCore.Blueprint.Stack.Quartz", "NDTCore.Blueprint.Stack.Quartz\NDTCore.Blueprint.Stack.Quartz.csproj", "{E0810B2C-9849-4CA0-AF42-610E254C0D03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDTCore.Blueprint.Stack.AzureServiceBus", "NDTCore.Blueprint.Stack.AzureServiceBus\NDTCore.Blueprint.Stack.AzureServiceBus.csproj", "{2DF4CEC6-5E0E-4E94-8937-B7FEC4042B84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NDTCore.Blueprint.Stack.AzureServiceBus", "NDTCore.Blueprint.Stack.AzureServiceBus\NDTCore.Blueprint.Stack.AzureServiceBus.csproj", "{2DF4CEC6-5E0E-4E94-8937-B7FEC4042B84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDTCore.Blueprint.SOLIDPrinciples", "NDTCore.Blueprint.SOLIDPrinciples\NDTCore.Blueprint.SOLIDPrinciples.csproj", "{93D03605-9E03-449C-8DF6-F0608D1F03A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{2DF4CEC6-5E0E-4E94-8937-B7FEC4042B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DF4CEC6-5E0E-4E94-8937-B7FEC4042B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DF4CEC6-5E0E-4E94-8937-B7FEC4042B84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D03605-9E03-449C-8DF6-F0608D1F03A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D03605-9E03-449C-8DF6-F0608D1F03A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D03605-9E03-449C-8DF6-F0608D1F03A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D03605-9E03-449C-8DF6-F0608D1F03A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
