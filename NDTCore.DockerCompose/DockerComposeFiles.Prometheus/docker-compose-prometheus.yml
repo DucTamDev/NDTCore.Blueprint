@@ -1,0 +1,20 @@
+services:
+  # Prometheus
+  prometheus:
+    image: prom/prometheus:latest
+    hostname: prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - prometheus:/prometheus
+      - ./prometheus-config.yaml:/etc/prometheus/prometheus-config.yml
+    command:
+      - "--config.file=/etc/prometheus/prometheus-config.yml"
+    deploy:
+      resources:
+        limits:
+          memory: 300M
+    networks:
+      - elk
+    restart: always
